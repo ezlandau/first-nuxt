@@ -9,6 +9,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
     "ansi-html-community": "^0.0.8",
     "core-js": "^3.19.3",
     "html-entities": "^2.3.3",
