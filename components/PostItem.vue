@@ -7,12 +7,17 @@
 </div>
 <div class="post__btns">
   <b-button
-    @click="$router.push(`/posts/${post.id}`)"
+    @click="$router.push(`/parent/${post.id}`)"
   >
     Open
   </b-button>
   <b-button
-    @click="$emit('remove', post)"
+    @click="updatePost(post, post)"
+  >
+    Update
+  </b-button>
+  <b-button
+    @click="deletePost(post, post)"
   >
     Delete
   </b-button>
@@ -21,12 +26,19 @@
 </template>
 
 <script>
+import {mapActions} from 'vuex'
 export default {
   props: {
     post: {
       type: Object,
       required: true,
     }
+  },
+  methods: {
+    ...mapActions({
+      updatePost: 'posts/updatePost',
+      deletePost: 'posts/deletePost'
+    }),
   }
 }
 </script>

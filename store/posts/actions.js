@@ -30,5 +30,12 @@ export default {
     } catch (e) {
       console.log(e)
     }
+  },
+  async updatePost ({commit}, post) {
+    commit('UPDATE_POST', post);
+  },
+  async deletePost ({commit}, post) {
+    commit('DELETE_POST', post);
   }
+
 }

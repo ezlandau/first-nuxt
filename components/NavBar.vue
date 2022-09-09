@@ -36,6 +36,11 @@
           </nuxt-link>
         </b-navbar-item>
         <b-navbar-item>
+          <nuxt-link to="/parent/child">
+            Child
+          </nuxt-link>
+        </b-navbar-item>
+        <b-navbar-item>
           <nuxt-link to="/contact">
             Contact
           </nuxt-link>
