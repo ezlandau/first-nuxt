@@ -1,29 +1,5 @@
 <template>
   <div>
-    <h1>Page with posts</h1>
-    <b-input
-      :model-value="searchQuery"
-      @update:model-value="setSearchQuery"
-      placeholder="Searching...."
-      v-focus
-    />
-    <div class="app__btns">
-      <b-button
-        @click="showDialog"
-      >
-        Create post
-      </b-button>
-      <b-select
-        :model-value="selectedSort"
-        @update:model-value="setSelectedSort"
-        :options="sortOptions"
-      />
-    </div>
-    <b-dialog v-model:show="dialogVisible">
-      <post-form
-        @create="createPost"
-      />
-    </b-dialog>
     <post-list
       :posts="sortedAndSearchedPosts"
       @remove="removePost"
@@ -109,11 +85,6 @@ export default {
 </script>
 
 <style>
-.app__btns {
-  margin: 15px 0;
-  display: flex;
-  justify-content: space-between;
-}
 .page__wrapper {
   display: flex;
   margin-top: 15px;

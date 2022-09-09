@@ -9,7 +9,7 @@
   <b-button
     @click="$router.push(`/parent/${post.id}`)"
   >
-    Open
+  Open
   </b-button>
   <b-button
     @click="updatePost(post, post)"
@@ -23,7 +23,9 @@
   </b-button>
 </div>
 </div>
+
 </template>
+
 
 <script>
 import {mapActions} from 'vuex'

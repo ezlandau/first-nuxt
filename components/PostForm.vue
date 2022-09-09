@@ -14,7 +14,7 @@
     />
     <b-button
       style="align-self: flex-end; margin-top: 15px"
-      @click="createPost"
+      @click="createPost(post)"
     >
       Create
     </b-button>
@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import {mapActions} from 'vuex'
 export default {
   data() {
     return {
@@ -32,14 +33,9 @@ export default {
     }
   },
   methods: {
-    createPost() {
-      this.post.id = Date.now();
-      this.$emit('create', this.post)
-      this.post = {
-        title: '',
-        body: ''
-      }
-    }
+    ...mapActions({
+      createPost: 'posts/createPost'
+    }),
   },
 }
 </script>

@@ -31,6 +31,14 @@ export default {
       console.log(e)
     }
   },
+  async createPost ({commit}, postTmp) {
+    const post = ({
+      id: Date.now(),
+      title: postTmp.title,
+      body: postTmp.body
+    });
+    commit('CREATE_POST', post);
+  },
   async updatePost ({commit}, post) {
     commit('UPDATE_POST', post);
   },
