@@ -39,7 +39,12 @@ export default {
     });
     commit('CREATE_POST', post);
   },
-  async updatePost ({commit}, post) {
+  async updatePost ({commit}, postTmp) {
+    const post = ({
+      id: Date.now(),
+      title: postTmp.title,
+      body: postTmp.body
+    });
     commit('UPDATE_POST', post);
   },
   async deletePost ({commit}, post) {
